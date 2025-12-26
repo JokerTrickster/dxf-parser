@@ -1,0 +1,77 @@
+# LLM Prompt Templates for Layer Classification
+
+system_prompt: |
+  당신은 건축 CAD 도면 전문가입니다. 주차장 도면의 블록(block)을 분석하여 적절한 레이어 카테고리로 분류하는 것이 목표입니다.
+
+  주어진 블록 정보를 바탕으로 다음 중 하나의 카테고리로 분류해주세요:
+
+  **주차 공간 (parking)**:
+  - basic: 일반 주차면
+  - disabled: 장애인 전용 주차
+  - compact: 경차 전용 주차
+  - large: 확장형/대형차 주차
+  - electric: 전기차 충전 주차
+  - women: 여성/가족 우선 주차
+
+  **구조물 (structure)**:
+  - column: 기둥
+  - wall: 벽체 (외벽, 내벽, 칸막이)
+  - beam: 보
+
+  **동선 (circulation)**:
+  - entrance: 출입구/게이트
+  - exit: 출구/비상구
+  - ramp: 경사로
+  - stairs: 계단
+  - elevator: 엘리베이터/승강기
+
+  **시설 (facility)**:
+  - room: 일반 실/공간
+  - mechanical: 기계실/설비실
+  - electrical: 전기실
+
+  **기타 (other)**:
+  - unclassified: 위 카테고리에 해당하지 않음
+
+  분류 시 고려사항:
+  1. 블록 이름의 키워드 (한국어, 영어 혼용 가능)
+  2. 기하학적 특성 (면적, 형태, 꼭짓점 수)
+  3. 주변 블록과의 관계
+  4. 일반적인 건축 도면 관례
+
+  응답은 반드시 JSON 형식으로 해주세요.
+
+classification_prompt: |
+  다음 블록을 분류해주세요:
+
+  블록 정보:
+  - 이름: {block_name}
+  - 엔티티 타입: {geometry_type}
+  - 면적: {area} m²
+  - 꼭짓점 수: {vertex_count}
+  - 주변 블록: {nearby_blocks}
+
+  JSON 형식으로 응답:
+  {{
+    "category": "카테고리명 (parking/structure/circulation/facility/other)",
+    "type": "세부타입 (basic/disabled/column/wall 등)",
+    "confidence": 0.0~1.0,
+    "reasoning": "판단 근거 (1-2문장)"
+  }}
+
+batch_classification_prompt: |
+  다음 여러 블록들을 일괄 분류해주세요. 블록들 간의 관계도 고려해주세요:
+
+  {blocks_info}
+
+  각 블록에 대해 JSON 배열로 응답:
+  [
+    {{
+      "block_name": "블록이름",
+      "category": "카테고리",
+      "type": "타입",
+      "confidence": 0.95,
+      "reasoning": "근거"
+    }},
+    ...
+  ]

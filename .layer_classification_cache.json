@@ -1,0 +1,975 @@
+{
+  "지하1층평면도": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:22.490626"
+  },
+  "지하1층평면도$0$A$Ce0667456": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:22.492761"
+  },
+  "지하1층평면도$0$FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.494045"
+  },
+  "지하1층평면도$0$지하1층평면도$0$FSD-1800": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.507491"
+  },
+  "지하1층평면도$0$지하1층평면도$0$A$C41f8edef": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.510786"
+  },
+  "지하1층평면도$0$지하1층평면도$0$FSD-1000": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.544391"
+  },
+  "지하1층평면도$0$지하1층평면도$0$A$C262A1D2C": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:22.668938"
+  },
+  "지하1층평면도$0$지하1층평면도$0$A$C07BB496C": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.678795"
+  },
+  "지하1층평면도$0$지하1층평면도$0$A$C7AE148A7": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.680143"
+  },
+  "지하1층평면도$0$지하1층평면도$0$A$C51E91556": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:22.682758"
+  },
+  "지하1층평면도$0$A$Cda78c094": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.686345"
+  },
+  "지하1층평면도$0$지하1층평면도$0$STA_B1F": {
+    "category": "circulation",
+    "type": "stairs",
+    "confidence": 0.98,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.691877"
+  },
+  "지하1층평면도$0$지하2층평면도$0$지하층자동문-1": {
+    "category": "circulation",
+    "type": "entrance",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.695047"
+  },
+  "지하1층평면도$0$제연da": {
+    "category": "facility",
+    "type": "mechanical",
+    "confidence": 0.9,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.734807"
+  },
+  "지하1층평면도$0$지하1층평면도$0$74+74 core(rev2)-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.740843"
+  },
+  "지하1층평면도$0$지하1층평면도$0$84A+84B core_3(rev1)-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.742722"
+  },
+  "지하1층평면도$0$지하1층평면도$0$core_B1F계단_260": {
+    "category": "circulation",
+    "type": "stairs",
+    "confidence": 0.98,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.744267"
+  },
+  "지하1층평면도$0$쪽잼1000": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:22.746364"
+  },
+  "지하1층평면도$0$지하1층평면도$0$59-C-1ST$0$core_1층계단_260": {
+    "category": "circulation",
+    "type": "stairs",
+    "confidence": 0.98,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.748731"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B105": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.755446"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B106(0825)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.763128"
+  },
+  "지하1층평면도$0$지하1층평면도$0$59+59+59 core-1ST$0$FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.769958"
+  },
+  "지하1층평면도$0$지하2층평면도$0$74-C-1ST-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.782856"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B119": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.785751"
+  },
+  "지하1층평면도$0$지하1층평면도$0$59+59 core(rev2)-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.787735"
+  },
+  "지하1층평면도$0$지하1층평면도$0$59+59 core_2(rev1)-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.790778"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B102_103(0609)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.795236"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B107(0825)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.803035"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B109(0825)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.810327"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B116(0825)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.823539"
+  },
+  "지하1층평면도$0$지하1층평면도$0$74+84B core(rev1)-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.835060"
+  },
+  "지하1층평면도$0$지하1층평면도$0$84A+84A core(rev2)-120-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.836579"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B-108(0609)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.841889"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B115(0825)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.847370"
+  },
+  "지하1층평면도$0$지하1층평면도$0$74-C-1ST-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.856522"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B113(0609)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.867126"
+  },
+  "지하1층평면도$0$지하1층평면도$0$B-124(0609)": {
+    "category": "facility",
+    "type": "room",
+    "confidence": 0.7,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.878323"
+  },
+  "지하1층평면도$0$지하1층평면도$0$59+59 core_3(rev1)-FSD-1100": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.881341"
+  },
+  "지하1층평면도$0$지하1층_기둥": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.919863"
+  },
+  "지하1층평면도$0$500x700": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:22.922963"
+  },
+  "지하1층평면도$0$500x800": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.154261"
+  },
+  "지하1층평면도$0$커뮤니티수정240425": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.254173"
+  },
+  "*U292": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.255361"
+  },
+  "지하1층평면도$0$지하1층평면도$0$지하1층평면도$0$SSD-1800": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.258306"
+  },
+  "*U345": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.260153"
+  },
+  "*U309": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.261527"
+  },
+  "*U340": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.263525"
+  },
+  "*U308": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.264924"
+  },
+  "*U305": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.266174"
+  },
+  "*U324": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.271103"
+  },
+  "*U325": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.272604"
+  },
+  "*U313": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.276948"
+  },
+  "*U314": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.279492"
+  },
+  "*U344": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.281094"
+  },
+  "*U306": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.283222"
+  },
+  "지하1층평면도$0$지하1층평면도$0$지하1층평면도$0$SSD-1000-D": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.285761"
+  },
+  "*U312": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.289542"
+  },
+  "*U326": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.294240"
+  },
+  "*U318": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.298691"
+  },
+  "*U346": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.302134"
+  },
+  "*U330": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.305512"
+  },
+  "*U327": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.309940"
+  },
+  "*U307": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.313179"
+  },
+  "*U332": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.315548"
+  },
+  "*U311": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.316948"
+  },
+  "*U343": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.320512"
+  },
+  "*U339": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.321810"
+  },
+  "*U328": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.325506"
+  },
+  "*U310": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.327253"
+  },
+  "*U260": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.328383"
+  },
+  "*U293": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.329621"
+  },
+  "*U261": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.331246"
+  },
+  "*U294": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.332594"
+  },
+  "지하1층평면도$0$COK3": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.333966"
+  },
+  "*U296": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.335348"
+  },
+  "지하1층평면도$0$XR-지하주차장$0$XREF.부대$0$접이문": {
+    "category": "circulation",
+    "type": "entrance",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.337784"
+  },
+  "지하1층평면도$0$XR-지하주차장$0$A$C23FB5DCC": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.339861"
+  },
+  "지하1층평면도$0$XR-지하주차장$0$변기_CC 113_F": {
+    "category": "facility",
+    "type": "restroom",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.342226"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$CL605_파우더 세면대_F": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.347633"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$xr-지하주차장평면도(건축)$0$2URIN02": {
+    "category": "facility",
+    "type": "restroom",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.357033"
+  },
+  "*U297": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.361174"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$to-la-004-D-P": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.363652"
+  },
+  "*U299": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.366916"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$줄트렌치_870": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.368542"
+  },
+  "*U331": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.379154"
+  },
+  "지하1층평면도$0$XREF-3BL-B1F$0$실내골프2": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.380497"
+  },
+  "지하1층평면도$0$A$C1D3F5735": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.382051"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$장애인슬라이딩": {
+    "category": "circulation",
+    "type": "entrance",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.402149"
+  },
+  "지하1층평면도$0$경로당_1층$0$B-003": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.416776"
+  },
+  "지하1층평면도$0$A$C40E8759F": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.428911"
+  },
+  "*U315": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.610393"
+  },
+  "*U322": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.614436"
+  },
+  "*U323": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.617840"
+  },
+  "지하1층평면도$0$A$C131A241B": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.635563"
+  },
+  "*U335": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.650326"
+  },
+  "*U329": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.658073"
+  },
+  "지하1층평면도$0$X-plan-parking$0$X-plan-parking$0$G$C272225D3": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.660849"
+  },
+  "*U320": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.669836"
+  },
+  "*U319": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.671631"
+  },
+  "*U321": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.674452"
+  },
+  "*U342": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.677087"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$DOOR-SSD2": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.685617"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$DOOR-SSD1": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.688377"
+  },
+  "*U334": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.721500"
+  },
+  "*U333": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.724205"
+  },
+  "지하1층평면도$0$shoe fur": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.726616"
+  },
+  "지하1층평면도$0$A$C12A10687": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.757593"
+  },
+  "지하1층평면도$0$신발장": {
+    "category": "facility",
+    "type": "storage",
+    "confidence": 0.63,
+    "reasoning": "키워드 매칭: 100%, 기하학 검증: 70%",
+    "cached_at": "2025-12-26T10:19:24.777851"
+  },
+  "지하1층평면도$0$X-B1$0$샤워수전 DD-1626": {
+    "category": "facility",
+    "type": "restroom",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.793045"
+  },
+  "*U298": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.965816"
+  },
+  "*U317": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.970033"
+  },
+  "*U316": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.971276"
+  },
+  "지하1층평면도$0$어린이집_1층$0$A$C65E5163E": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:24.975112"
+  },
+  "지하1층평면도$0$xr-지하주차장평면도(건축)$0$DOOR-SSD3": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:24.981737"
+  },
+  "*U338": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.003403"
+  },
+  "*U336": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.028780"
+  },
+  "*U341": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.030749"
+  },
+  "*U337": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.031825"
+  },
+  "지하1층평면도$0$S10A": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.079821"
+  },
+  "지하1층평면도$0$XREF-지하주차장BASE$0$양변기평면": {
+    "category": "facility",
+    "type": "restroom",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.095244"
+  },
+  "지하1층평면도$0$XREF-지하주차장BASE$0$A$C18963F04": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.096626"
+  },
+  "지하1층평면도$0$어린이집_1층$0$유아 소변기": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.100958"
+  },
+  "지하1층평면도$0$XREF-지하주차장BASE$0$thqusrl": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:25.102393"
+  },
+  "지하1층평면도$0$지하1층평면도$0$A$C62741559": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.108096"
+  },
+  "지하1층평면도$0$지하1층평면도$0$A$C60100D8F": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.116780"
+  },
+  "지하1층평면도$0$지하1층평면도$0$59+59 core(rev2)-ELEV. 16인승": {
+    "category": "parking",
+    "type": "electric",
+    "confidence": 0.6649999999999999,
+    "reasoning": "키워드 매칭: 100%, 기하학 검증: 70%",
+    "cached_at": "2025-12-26T10:19:25.118192"
+  },
+  "지하1층평면도$0$지하1층평면도$0$PARK_일반": {
+    "category": "parking",
+    "type": "basic",
+    "confidence": 0.9,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.125762"
+  },
+  "지하1층평면도$0$지하1층평면도$0$PARK_확장": {
+    "category": "parking",
+    "type": "large",
+    "confidence": 0.9,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.129040"
+  },
+  "지하1층평면도$0$지하1층평면도$0$PARK_장애인": {
+    "category": "parking",
+    "type": "disabled",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.179250"
+  },
+  "지하1층평면도$0$지하1층평면도$0$PARK_경차": {
+    "category": "parking",
+    "type": "compact",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.209837"
+  },
+  "지하1층평면도$0$지하1층평면도$0$Park-환경친화": {
+    "category": "parking",
+    "type": "electric",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:25.211148"
+  },
+  "지하1층평면도$0$지하1층평면도$0$PARK-EC": {
+    "category": "parking",
+    "type": "electric",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:26.119686"
+  },
+  "지하1층평면도$0$가족배려주차(확장형)": {
+    "category": "parking",
+    "type": "women",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:26.609801"
+  },
+  "지하1층평면도$0$가족배려주차(일반형)": {
+    "category": "parking",
+    "type": "women",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:26.627961"
+  },
+  "지하1층평면도$0$지하1층평면도$0$교통약자우선": {
+    "category": "parking",
+    "type": "women",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:26.676709"
+  },
+  "지하1층평면도$0$지하1층평면도$0$회차공간": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:26.763672"
+  },
+  "A$Cbc1cc44a": {
+    "category": "structure",
+    "type": "column",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:26.772529"
+  },
+  "집수정1500": {
+    "category": "other",
+    "type": "unclassified",
+    "confidence": 0.3,
+    "reasoning": "규칙 매칭 실패",
+    "cached_at": "2025-12-26T10:19:26.774184"
+  },
+  "지하1층평면도$0$FSD-1800": {
+    "category": "circulation",
+    "type": "exit",
+    "confidence": 0.95,
+    "reasoning": "키워드 매칭: 100%",
+    "cached_at": "2025-12-26T10:19:26.775676"
+  }
+}

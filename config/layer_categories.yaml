@@ -1,0 +1,126 @@
+# DXF Layer Categories Schema
+# LLM will classify blocks into these categories
+
+categories:
+  parking:
+    description: "주차 공간 관련 레이어"
+    types:
+      basic:
+        name: "일반 주차"
+        output_layer: "p-parking-basic"
+        color: 7  # White
+        typical_keywords: ["일반", "보통", "NORMAL", "STD", "STANDARD"]
+
+      disabled:
+        name: "장애인 주차"
+        output_layer: "p-parking-disabled"
+        color: 1  # Red
+        typical_keywords: ["장애인", "DISABLED", "HANDICAP", "배리어프리"]
+
+      compact:
+        name: "경차 주차"
+        output_layer: "p-parking-compact"
+        color: 4  # Cyan
+        typical_keywords: ["경차", "COMPACT", "SMALL"]
+
+      large:
+        name: "확장형 주차"
+        output_layer: "p-parking-large"
+        color: 3  # Green
+        typical_keywords: ["확장", "LARGE", "SUV"]
+
+      electric:
+        name: "전기차 충전"
+        output_layer: "p-parking-electric"
+        color: 5  # Blue
+        typical_keywords: ["전기차", "EV", "ELECTRIC", "환경친화"]
+
+      women:
+        name: "여성/가족 우선"
+        output_layer: "p-parking-women"
+        color: 6  # Magenta
+        typical_keywords: ["여성", "가족", "WOMEN", "FAMILY"]
+
+  structure:
+    description: "구조물 관련 레이어"
+    types:
+      column:
+        name: "기둥"
+        output_layer: "s-structure-column"
+        color: 8  # Gray
+        typical_keywords: ["기둥", "COLUMN", "COL", "PILLAR"]
+
+      wall:
+        name: "벽"
+        output_layer: "s-structure-wall"
+        color: 9  # Light Gray
+        typical_keywords: ["벽", "WALL", "외벽", "내벽", "PARTITION"]
+
+      beam:
+        name: "보"
+        output_layer: "s-structure-beam"
+        color: 10
+        typical_keywords: ["보", "BEAM", "GIRDER"]
+
+  circulation:
+    description: "동선 관련 레이어"
+    types:
+      entrance:
+        name: "출입구"
+        output_layer: "c-circulation-entrance"
+        color: 3  # Green
+        typical_keywords: ["출입구", "ENTRANCE", "DOOR", "게이트", "GATE"]
+
+      exit:
+        name: "출구"
+        output_layer: "c-circulation-exit"
+        color: 1  # Red
+        typical_keywords: ["출구", "EXIT", "비상구", "EMERGENCY"]
+
+      ramp:
+        name: "경사로"
+        output_layer: "c-circulation-ramp"
+        color: 4  # Cyan
+        typical_keywords: ["경사로", "RAMP", "SLOPE"]
+
+      stairs:
+        name: "계단"
+        output_layer: "c-circulation-stairs"
+        color: 5  # Blue
+        typical_keywords: ["계단", "STAIRS", "STAIR"]
+
+      elevator:
+        name: "엘리베이터"
+        output_layer: "c-circulation-elevator"
+        color: 6  # Magenta
+        typical_keywords: ["엘리베이터", "ELEVATOR", "LIFT", "승강기"]
+
+  facility:
+    description: "시설 관련 레이어"
+    types:
+      room:
+        name: "실/공간"
+        output_layer: "f-facility-room"
+        color: 7
+        typical_keywords: ["실", "ROOM", "SPACE", "공간"]
+
+      mechanical:
+        name: "기계실"
+        output_layer: "f-facility-mechanical"
+        color: 8
+        typical_keywords: ["기계실", "MECHANICAL", "설비실"]
+
+      electrical:
+        name: "전기실"
+        output_layer: "f-facility-electrical"
+        color: 9
+        typical_keywords: ["전기실", "ELECTRICAL", "전기"]
+
+  other:
+    description: "기타"
+    types:
+      unclassified:
+        name: "미분류"
+        output_layer: "x-other-unclassified"
+        color: 250  # Light gray
+        typical_keywords: []

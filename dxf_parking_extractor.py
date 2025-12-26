@@ -395,7 +395,6 @@ def main():
                     include_ids=not args.no_ids,
                     normalize=args.normalize
                 )
-                extractor.export_to_csv(floor_csv)
 
                 extractor.parking_data = original_data
     else:
@@ -405,7 +404,6 @@ def main():
             normalize=args.normalize,
             floor_filter=args.floor
         )
-        extractor.export_to_csv(args.csv)
 
     print("\n작업 완료!")
 
