@@ -16,7 +16,7 @@ import os
 
 # 레이어 매핑 설정
 LAYER_MAPPING = {
-    # 원본 블록명 키워드 -> 새 레이어명
+    # 주차면
     'PARK_일반': 'p-parking-basic',
     'PARK_확장': 'p-parking-large',
     'PARK_경차': 'p-parking-small',
@@ -26,6 +26,12 @@ LAYER_MAPPING = {
     '가족배려주차(확장형)': 'p-parking-large-women',
     '가족배려주차(일반형)': 'p-parking-large-women',
     '교통약자우선': 'p-parking-large-women',
+
+    # 출입구/비상구 (계단 제외)
+    'FSD': 's-circulation-exit',
+    '출입구': 's-circulation-entrance',
+    '비상구': 's-circulation-exit',
+
 }
 
 # 레이어 색상 설정 (AutoCAD 색상 인덱스)
@@ -36,6 +42,8 @@ LAYER_COLORS = {
     'p-parking-disable': 1,     # 빨강
     'p-parking-large-electric': 5,  # 파랑
     'p-parking-large-women': 6,     # 마젠타
+    's-circulation-exit': 1,    # 빨강
+    's-circulation-entrance': 3,  # 초록
 }
 
 # 주차면 타입별 기본 크기 (mm)
@@ -70,9 +78,10 @@ class DXFParkingExtractor:
         return None
 
     def get_parking_type(self, block_name: str) -> Optional[str]:
-        """블록명에서 주차면 타입 추출"""
-        for keyword in LAYER_MAPPING.keys():
-            if keyword in block_name:
+        """블록명에서 타입 추출 (주차면, 기둥, 계단 등)"""
+        # 정확한 매칭 우선 (긴 키워드부터)
+        for keyword in sorted(LAYER_MAPPING.keys(), key=len, reverse=True):
+            if keyword.upper() in block_name.upper():
                 return keyword
         return None
 
@@ -213,17 +222,25 @@ class DXFParkingExtractor:
         return (x_sum / n, y_sum / n)
 
     def normalize_coordinates(self):
-        """좌표를 원점 기준으로 정규화"""
+        """좌표를 원점 기준으로 정규화 (주차면 기준)"""
         if not self.parking_data:
             return
 
-        # 모든 좌표에서 최소값 찾기
+        # 주차면만 기준으로 최소값 찾기 (출입구 제외)
         all_x = []
         all_y = []
         for parking in self.parking_data:
-            for v in parking['vertices']:
-                all_x.append(v[0])
-                all_y.append(v[1])
+            # p-parking으로 시작하는 레이어만 정규화 기준으로 사용
+            if parking['layer'].startswith('p-parking'):
+                for v in parking['vertices']:
+                    all_x.append(v[0])
+                    all_y.append(v[1])
+
+        if not all_x:  # 주차면이 없으면 전체 기준
+            for parking in self.parking_data:
+                for v in parking['vertices']:
+                    all_x.append(v[0])
+                    all_y.append(v[1])
 
         min_x = min(all_x)
         min_y = min(all_y)
@@ -265,10 +282,6 @@ class DXFParkingExtractor:
         """새 DXF 파일 생성"""
         print(f"\n새 DXF 파일 생성: {output_file}")
 
-        # 좌표 정규화
-        if normalize:
-            self.normalize_coordinates()
-
         # 층별 필터링
         data_to_export = self.parking_data
         if floor_filter:
@@ -276,6 +289,37 @@ class DXFParkingExtractor:
             if floor_filter.upper() in floors:
                 data_to_export = floors[floor_filter.upper()]
                 print(f"층 필터 적용: {floor_filter.upper()} ({len(data_to_export)}개)")
+
+        # 좌표 정규화 (층 분리 후)
+        if normalize and data_to_export:
+            # data_to_export 기준으로 정규화
+            all_x = []
+            all_y = []
+            for parking in data_to_export:
+                # p-parking으로 시작하는 레이어만 정규화 기준으로 사용
+                if parking['layer'].startswith('p-parking'):
+                    for v in parking['vertices']:
+                        all_x.append(v[0])
+                        all_y.append(v[1])
+
+            if not all_x:  # 주차면이 없으면 전체 기준
+                for parking in data_to_export:
+                    for v in parking['vertices']:
+                        all_x.append(v[0])
+                        all_y.append(v[1])
+
+            if all_x:
+                min_x = min(all_x)
+                min_y = min(all_y)
+                print(f"좌표 정규화: 오프셋 ({min_x:.2f}, {min_y:.2f})")
+
+                # data_to_export의 좌표 정규화
+                for parking in data_to_export:
+                    parking['vertices'] = [(v[0] - min_x, v[1] - min_y) for v in parking['vertices']]
+                    parking['insert_point'] = (
+                        parking['insert_point'][0] - min_x,
+                        parking['insert_point'][1] - min_y
+                    )
 
         # 새 DXF 문서 생성
         new_doc = ezdxf.new('R2010')
