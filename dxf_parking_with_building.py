@@ -37,6 +37,12 @@ LAYER_COLORS = {
 }
 
 
+# 제외할 블록 키워드 (계단, 비상구 등)
+EXCLUDED_BLOCK_KEYWORDS = [
+    '계단', 'STAIR', 'FSD', '비상구'
+]
+
+
 class ParkingWithBuildingExtractor:
     """주차면 + 건물 외곽선 추출기"""
 
@@ -46,6 +52,7 @@ class ParkingWithBuildingExtractor:
         self.parking_data = []
         self.building_entities = []
         self.block_geometries = {}
+        self.excluded_blocks_count = 0
 
     def get_layer_for_block(self, block_name: str) -> Optional[str]:
         """블록명에 해당하는 레이어명 반환"""
@@ -163,6 +170,25 @@ class ParkingWithBuildingExtractor:
             return
 
         for entity in block:
+            # 블록 이름 필터링 (계단 등 제외)
+            if entity.dxftype() == 'INSERT':
+                block_name = entity.dxf.name
+                is_excluded = False
+                for keyword in EXCLUDED_BLOCK_KEYWORDS:
+                    if keyword in block_name:
+                        is_excluded = True
+                        self.excluded_blocks_count += 1
+                        # print(f"  [제외] {block_name} ({keyword})")
+                        break
+                
+                if is_excluded:
+                    continue
+
+                if block_name in self.doc.blocks:
+                    nested_block = self.doc.blocks[block_name]
+                    self.extract_building_lines_from_block(nested_block, depth + 1)
+                continue
+
             layer = entity.dxf.layer if hasattr(entity.dxf, 'layer') else None
 
             # PLAN 레이어의 도형 요소만 추출
@@ -200,12 +226,12 @@ class ParkingWithBuildingExtractor:
                         'end_angle': end_angle
                     })
 
-            # INSERT는 재귀적으로 탐색
-            if entity.dxftype() == 'INSERT':
-                block_name = entity.dxf.name
-                if block_name in self.doc.blocks:
-                    nested_block = self.doc.blocks[block_name]
-                    self.extract_building_lines_from_block(nested_block, depth + 1)
+            # INSERT는 위에서 처리했으므로 제거
+            # if entity.dxftype() == 'INSERT':
+            #     block_name = entity.dxf.name
+            #     if block_name in self.doc.blocks:
+            #         nested_block = self.doc.blocks[block_name]
+            #         self.extract_building_lines_from_block(nested_block, depth + 1)
 
     def extract_all(self, floor: str = 'B1'):
         """주차면 + 건물 외곽선 추출"""
@@ -230,8 +256,9 @@ class ParkingWithBuildingExtractor:
                 # 건물 외곽선 추출
                 self.extract_building_lines_from_block(block)
 
-        print(f"\n주차면: {len(self.parking_data)}개")
+        print(f"주차면: {len(self.parking_data)}개")
         print(f"건물 외곽선: {len(self.building_entities)}개 (LINE/LWPOLYLINE/ARC)")
+        print(f"제외된 블록 (계단 등): {self.excluded_blocks_count}개")
 
         # 통계
         stats = defaultdict(int)

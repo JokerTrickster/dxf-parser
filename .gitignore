@@ -19,3 +19,7 @@ venv/
 # Output files (generated)
 *_converted.dxf
 *_parking.csv
+
+# Ignore all DXF and CSV files (except tracked ones)
+*.dxf
+*.csv
