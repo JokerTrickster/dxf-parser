@@ -95,7 +95,19 @@ class ParkingWithBuildingExtractor:
 
                     if area > largest_area:
                         largest_area = area
-                        largest_polyline = vertices
+                        # 주차면을 직사각형으로 강제 변환 (AABB)
+                        xs = [v[0] for v in vertices]
+                        ys = [v[1] for v in vertices]
+                        min_x, max_x = min(xs), max(xs)
+                        min_y, max_y = min(ys), max(ys)
+                        
+                        # 반시계 방향 직사각형 좌표 생성
+                        largest_polyline = [
+                            (min_x, min_y),
+                            (max_x, min_y),
+                            (max_x, max_y),
+                            (min_x, max_y)
+                        ]
 
         if largest_polyline:
             self.block_geometries[block_name] = largest_polyline
