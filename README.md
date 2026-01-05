@@ -91,7 +91,7 @@ python3 dxf_parking_extractor.py input.dxf -o output.dxf -c output.csv
 
 ### FastAPI 서버 실행
 ```bash
-uvicorn src.presentation.main:app --reload
+uvicorn src.presentation.main:app --reload --port 7000
 ```
 
 ## 📊 출력 형식
