@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  dxf-converter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dxf-converter-api
+    ports:
+      - "7000:7000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=info
+    volumes:
+      # 개발 모드: 코드 변경 시 자동 반영 (프로덕션에서는 제거)
+      - ./app:/app/app
+      - ./dxf_to_mygeodata_csv.py:/app/dxf_to_mygeodata_csv.py
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Nginx 리버스 프록시 (선택사항)
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: dxf-converter-nginx
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #   depends_on:
+  #     - dxf-converter
+  #   restart: unless-stopped
+
+networks:
+  default:
+    name: dxf-converter-network
