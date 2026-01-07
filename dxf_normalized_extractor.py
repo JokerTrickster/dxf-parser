@@ -173,24 +173,16 @@ class NormalizedDXFExtractor:
                     self.extract_blocks_recursive(nested_block, depth + 1, max_depth)
 
     def extract_all(self):
-        """모든 블록 추출"""
-        print("블록 추출 시작...")
+        """모델스페이스에서 INSERT된 블록만 추출"""
+        print("블록 추출 시작 (모델스페이스에 INSERT된 블록만)...")
 
-        # 주요 평면도 블록
-        main_blocks = ['지하1층평면도', '지하2층평면도']
-
-        for block_name in main_blocks:
-            if block_name in self.doc.blocks:
-                print(f"  [{block_name}] 분석 중...")
-                block = self.doc.blocks[block_name]
-                self.extract_blocks_recursive(block)
-
-        # 모델스페이스도 확인
+        # 모델스페이스에서 시작
         msp = self.doc.modelspace()
         for entity in msp:
             if entity.dxftype() == 'INSERT':
                 block_name = entity.dxf.name
                 if block_name in self.doc.blocks:
+                    print(f"  [{block_name}] 분석 중...")
                     self.extract_blocks_recursive(self.doc.blocks[block_name])
 
         print(f"\n총 {len(self.extracted_geometries)}개 geometry 추출 완료")
