@@ -58,11 +58,57 @@ DXF 파일의 모든 블록을 분석하고 AI가 타입을 추정합니다.
 - 모든 INSERT 블록 추출 및 사용 횟수 카운트
 - LWPOLYLINE 면적 계산 (mm² → m²)
 - 블록명 + 면적 기반 AI 타입 추정
+- 주차면 관련 블록만 필터링 (옵션)
 - JSON 결과 출력
+
+**처리 로직**:
+```
+1. DXF 파일 로드 (ezdxf.readfile)
+   └─ ModelSpace에서 모든 Entity 탐색
+
+2. 중첩 블록 구조 탐색
+   ├─ INSERT 엔티티 발견 → 메인 블록
+   │   └─ 메인 블록 내부의 INSERT 탐색 → 서브 블록
+   │       └─ 서브 블록 사용 횟수 카운트
+   └─ 예: 지하주차장 도면 → PARK_일반 블록 639개
+
+3. 각 블록의 상세 정보 추출
+   ├─ LWPOLYLINE 엔티티 찾기
+   │   ├─ 꼭짓점(vertices) 추출
+   │   └─ Shoelace 공식으로 면적 계산
+   │       └─ mm² → m² 변환 (/1000000)
+   └─ 가장 큰 LWPOLYLINE 면적을 대표값으로 선택
+
+4. AI 타입 추정 (suggest_layer_type)
+   ├─ 면적 < 1m² → 마커로 분류
+   │   └─ "장애", "disabled" 키워드 → marker-disabled
+   ├─ 블록명 키워드 매칭
+   │   ├─ "확장", "large" → p-parking-large
+   │   ├─ "경차", "small" → p-parking-small
+   │   ├─ "전기", "electric", "ev" → p-parking-electric
+   │   ├─ "장애", "disabled" + 면적 ≥10m² → p-parking-disable
+   │   ├─ "일반", "주차", "parking" → p-parking-basic
+   │   └─ "램프", "ramp" → s-circulation-ramp
+   └─ 매칭 실패 → unknown
+
+5. 주차면 필터링 (--parking-only 플래그)
+   ├─ p-parking-* → ✅ 포함
+   ├─ marker-disabled → ✅ 포함
+   ├─ s-circulation-* → ✅ 포함
+   ├─ unknown + 면적 ≥5m² → ✅ 포함 (사용자 선택용)
+   └─ 기타 (기둥, 설비 등) → ❌ 제외
+
+6. JSON 출력
+   └─ {blocks: [...], total_blocks: N}
+```
 
 **사용법**:
 ```bash
+# 모든 블록 분석
 python3 analyze_layers.py input.dxf --output analysis.json
+
+# 주차면 관련 블록만 필터링
+python3 analyze_layers.py input.dxf --parking-only --output parking_blocks.json
 ```
 
 **출력 예시**:
@@ -96,6 +142,80 @@ python3 analyze_layers.py input.dxf --output analysis.json
 - 단위 변환 (mm → m) 및 좌표 정규화
 - 표준화된 레이어 구조의 DXF 생성
 - WKT 형식 CSV 출력
+
+**처리 로직**:
+```
+STEP 1: DXF 파일에서 주차면 추출
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1.1 레이어 매핑 로드
+    └─ JSON 파일 읽기: {블록명: 레이어타입}
+        예: "#배치도_지하주차장$0$확장형주차": "p-parking-large"
+
+1.2 중첩 블록 구조 탐색 (extract_nested_blocks)
+    ├─ ModelSpace → INSERT 엔티티
+    │   └─ 메인 블록 (예: #배치도_지하주차장$0)
+    │       └─ 서브 INSERT 엔티티
+    │           └─ 실제 주차면 블록 (예: 확장형주차)
+    │
+    ├─ 좌표 변환 (Matrix44)
+    │   ├─ 메인 블록 변환 행렬 (rotation, scale, translation)
+    │   ├─ 서브 블록 변환 행렬
+    │   └─ 누적 변환: 최종좌표 = 메인행렬 × 서브행렬 × 원본좌표
+    │
+    └─ LWPOLYLINE 추출
+        ├─ 각 꼭짓점에 변환 행렬 적용
+        ├─ 단위 변환: mm → m (/1000)
+        └─ 레이어 매핑 적용: 블록명 → 표준 레이어명
+
+1.3 장애인 주차 자동 재분류 (reclassify_disabled_parking)
+    ├─ marker-disabled 엔티티 좌표 추출 (장애인 마크)
+    ├─ 각 주차면과 장애인 마크 간 거리 계산
+    │   └─ 거리 = √[(x1-x2)² + (y1-y2)²]
+    └─ tolerance(기본 7m) 이내 주차면 → p-parking-disable로 변경
+        예: 일반주차 68개 → 장애인주차로 재분류
+
+STEP 2: 깨끗한 DXF 파일 생성
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2.1 좌표 정규화 (normalize_coordinates)
+    ├─ 모든 주차면의 최소 X, Y 좌표 찾기
+    │   └─ min_x, min_y 계산
+    ├─ 오프셋 적용
+    │   └─ 새 좌표 = 원본 좌표 - (min_x, min_y)
+    └─ 원점(0,0) 기준 좌표계로 정규화
+
+2.2 새 DXF 문서 생성
+    ├─ 표준 레이어 생성
+    │   ├─ p-parking-basic (색상: #000000)
+    │   ├─ p-parking-large (색상: #00FF00)
+    │   ├─ p-parking-small (색상: #0000FF)
+    │   ├─ p-parking-disable (색상: #FF0000)
+    │   └─ p-parking-electric (색상: #FFFF00)
+    │
+    └─ LWPOLYLINE 엔티티 생성
+        ├─ 레이어 지정
+        ├─ 닫힌 폴리라인 (closed=True)
+        └─ 정규화된 좌표 추가
+
+STEP 3: DXF → CSV 변환
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3.1 LWPOLYLINE → WKT 변환
+    ├─ 각 폴리라인의 꼭짓점 추출
+    ├─ WKT POLYGON 형식 생성
+    │   └─ "POLYGON((x1 y1, x2 y2, x3 y3, x4 y4, x1 y1))"
+    └─ 첫 점과 마지막 점 일치 확인 (닫힌 다각형)
+
+3.2 CSV 행 생성
+    ├─ 컬럼: X, Y, Z, Layer, PaperSpace, SubClasses, ...
+    ├─ 각 꼭짓점마다 1개 행 생성
+    └─ 폴리곤 구분: 빈 행으로 분리
+
+3.3 CSV 파일 저장
+    └─ UTF-8 인코딩, 헤더 포함
+
+최종 출력:
+  - processed.dxf: 표준화된 DXF (AutoCAD/QGIS)
+  - output.csv: WKT 형식 CSV (웹 뷰어)
+```
 
 **사용법**:
 ```bash
@@ -237,16 +357,55 @@ GeometryID,Layer,LayerName,WKT,VertexCount,Area_m2,Color
 - 좌표 정규화 (원점 기준)
 - 단위: 미터(m)
 
-## 📚 문서
+## 📚 주요 알고리즘
 
-상세 구현 가이드:
-- **[BACKEND_IMPLEMENTATION.md](BACKEND_IMPLEMENTATION.md)**: Go 백엔드 구현 가이드
-- **[FRONTEND_IMPLEMENTATION.md](FRONTEND_IMPLEMENTATION.md)**: React 프론트엔드 구현 가이드
-- **[IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md)**: 현재 구현 상태 및 진행 상황
+### Shoelace 공식 (면적 계산)
 
-아키텍처 문서:
-- **[SIMPLE_QUEUE_IMPLEMENTATION.md](SIMPLE_QUEUE_IMPLEMENTATION.md)**: Go 채널 기반 큐 구현
-- **[DXF_PROCESSING_ARCHITECTURE.md](DXF_PROCESSING_ARCHITECTURE.md)**: 전체 시스템 아키텍처
+주차면 폴리라인의 면적을 계산하기 위해 사용:
+
+```python
+area = 0
+for i in range(len(vertices)):
+    j = (i + 1) % len(vertices)
+    area += vertices[i][0] * vertices[j][1]
+    area -= vertices[j][0] * vertices[i][1]
+area = abs(area) / 2.0
+```
+
+### Matrix44 변환 (중첩 블록)
+
+DXF 중첩 블록의 좌표를 계산:
+
+```python
+# 1. 메인 블록 변환 행렬
+main_matrix = main_insert.matrix44()
+
+# 2. 서브 블록 변환 행렬
+sub_matrix = sub_insert.matrix44()
+
+# 3. 누적 변환 적용
+final_matrix = main_matrix @ sub_matrix
+
+# 4. 각 꼭짓점 변환
+for vertex in vertices:
+    transformed = final_matrix.transform(vertex)
+```
+
+### 거리 기반 재분류
+
+장애인 마크 근처 주차면을 자동 재분류:
+
+```python
+# 유클리드 거리 계산
+distance = math.sqrt(
+    (parking_x - marker_x)**2 +
+    (parking_y - marker_y)**2
+)
+
+# tolerance 이내면 재분류
+if distance <= tolerance:
+    parking_layer = 'p-parking-disable'
+```
 
 ## 🎯 프로젝트 특징
 
