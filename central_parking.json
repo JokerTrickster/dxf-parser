@@ -1,0 +1,89 @@
+{
+  "blocks": [
+    {
+      "name": "#배치도_지하주차장$0$확장형주차",
+      "count": 1091,
+      "sample_area": 13.52,
+      "suggested_type": "p-parking-large"
+    },
+    {
+      "name": "#배치도_지하주차장$0$p-일반",
+      "count": 704,
+      "sample_area": 12.5,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "#배치도_지하주차장$0$p-경차",
+      "count": 151,
+      "sample_area": 7.2,
+      "suggested_type": "p-parking-small"
+    },
+    {
+      "name": "#배치도_지하주차장$0$전기차 완속",
+      "count": 84,
+      "sample_area": 13.52,
+      "suggested_type": "p-parking-electric"
+    },
+    {
+      "name": "#배치도_지하주차장$0$장애인전용주차",
+      "count": 68,
+      "sample_area": 0.42,
+      "suggested_type": "marker-disabled"
+    },
+    {
+      "name": "#배치도_지하주차장$0$택배주차",
+      "count": 36,
+      "sample_area": 14.85,
+      "suggested_type": "p-parking-delivery"
+    },
+    {
+      "name": "#배치도_지하주차장$0$전기차 급속",
+      "count": 28,
+      "sample_area": 13.52,
+      "suggested_type": "p-parking-electric"
+    },
+    {
+      "name": "#배치도_지하주차장$0$건축]240229_램프",
+      "count": 2,
+      "sample_area": 30.0,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "#배치도_지하주차장$0$240426_지하",
+      "count": 1,
+      "sample_area": 13.06,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "#배치도_지하주차장$0$A$C537D410A",
+      "count": 1,
+      "sample_area": 13.0,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "#배치도_지하주차장$0$A$C21F45B7F",
+      "count": 1,
+      "sample_area": 91507.77,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "#배치도_지하주차장$0$wjrwwrjwjw",
+      "count": 1,
+      "sample_area": 1.12,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "#배치도_지하주차장$0$230207_주차램프 주.부",
+      "count": 1,
+      "sample_area": 38.6,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "#배치도_지하주차장$0$A$C207B13F7",
+      "count": 1,
+      "sample_area": 2078.34,
+      "suggested_type": "p-parking-basic"
+    }
+  ],
+  "total_blocks": 14
+}

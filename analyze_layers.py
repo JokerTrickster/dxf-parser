@@ -12,7 +12,7 @@ import ezdxf
 from collections import defaultdict
 
 
-def analyze_dxf_layers(dxf_path):
+def analyze_dxf_layers(dxf_path, parking_only=False):
     """DXF 파일의 모든 블록 분석"""
     doc = ezdxf.readfile(dxf_path)
 
@@ -57,6 +57,10 @@ def analyze_dxf_layers(dxf_path):
 
         # 타입 추정
         suggested_type = suggest_layer_type(block_name, max_area)
+
+        # 주차면 관련 블록만 필터링 (옵션)
+        if parking_only and not is_parking_related(suggested_type, max_area):
+            continue
 
         block_info.append({
             'name': block_name,
@@ -113,22 +117,46 @@ def suggest_layer_type(block_name, area):
     return 'unknown'
 
 
+def is_parking_related(suggested_type, area):
+    """주차면 관련 블록인지 판단"""
+    # 주차면 타입
+    if suggested_type.startswith('p-parking'):
+        return True
+
+    # 장애인 마커
+    if suggested_type == 'marker-disabled':
+        return True
+
+    # 순환 동선 (램프, 통로 등)
+    if suggested_type.startswith('s-circulation'):
+        return True
+
+    # 면적이 5m² 이상이고 unknown인 경우 (사용자가 수동 선택 가능하도록)
+    if suggested_type == 'unknown' and area >= 5.0:
+        return True
+
+    return False
+
+
 def main():
     parser = argparse.ArgumentParser(description='DXF 레이어 분석')
     parser.add_argument('input', help='입력 DXF 파일')
     parser.add_argument('--output', help='출력 JSON 파일', default='analysis.json')
+    parser.add_argument('--parking-only', action='store_true', help='주차면 관련 블록만 필터링')
 
     args = parser.parse_args()
 
     try:
         # 분석 실행
-        result = analyze_dxf_layers(args.input)
+        result = analyze_dxf_layers(args.input, parking_only=args.parking_only)
 
         # JSON 저장
         with open(args.output, 'w', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
 
         print(f"✅ 분석 완료: {result['total_blocks']}개 블록 발견")
+        if args.parking_only:
+            print(f"   (주차면 관련 블록만 필터링됨)")
         print(f"📄 결과 저장: {args.output}")
 
         # 간단한 요약 출력

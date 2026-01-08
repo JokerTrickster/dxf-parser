@@ -1,0 +1,77 @@
+{
+  "blocks": [
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$PARK_일반",
+      "count": 639,
+      "sample_area": 12.5,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$PARK_확장",
+      "count": 492,
+      "sample_area": 13.52,
+      "suggested_type": "p-parking-large"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$PARK_경차",
+      "count": 93,
+      "sample_area": 7.2,
+      "suggested_type": "p-parking-small"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$Park-환경친화",
+      "count": 68,
+      "sample_area": 12.5,
+      "suggested_type": "unknown"
+    },
+    {
+      "name": "지하1층평면도$0$가족배려주차(확장형)",
+      "count": 67,
+      "sample_area": 13.52,
+      "suggested_type": "p-parking-large"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$PARK_장애인",
+      "count": 45,
+      "sample_area": 16.5,
+      "suggested_type": "p-parking-disable"
+    },
+    {
+      "name": "지하1층평면도$0$가족배려주차(일반형)",
+      "count": 22,
+      "sample_area": 12.5,
+      "suggested_type": "p-parking-basic"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$PARK-EC",
+      "count": 16,
+      "sample_area": 12.5,
+      "suggested_type": "unknown"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$교통약자우선",
+      "count": 6,
+      "sample_area": 13.52,
+      "suggested_type": "unknown"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$회차공간",
+      "count": 5,
+      "sample_area": 12.5,
+      "suggested_type": "unknown"
+    },
+    {
+      "name": "지하1층평면도$0$지하1층평면도$0$STA_B1F",
+      "count": 3,
+      "sample_area": 15.93,
+      "suggested_type": "unknown"
+    },
+    {
+      "name": "지하1층평면도$0$커뮤니티수정240425",
+      "count": 1,
+      "sample_area": 698.2,
+      "suggested_type": "unknown"
+    }
+  ],
+  "total_blocks": 12
+}
