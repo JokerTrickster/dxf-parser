@@ -105,10 +105,10 @@ DXF 파일의 모든 블록을 분석하고 AI가 타입을 추정합니다.
 **사용법**:
 ```bash
 # 모든 블록 분석
-python3 analyze_layers.py input.dxf --output analysis.json
+python3 src/analyze_layers.py data/dxf/input.dxf --output data/json/analysis.json
 
 # 주차면 관련 블록만 필터링
-python3 analyze_layers.py input.dxf --parking-only --output parking_blocks.json
+python3 src/analyze_layers.py data/dxf/input.dxf --parking-only --output data/json/parking_blocks.json
 ```
 
 **출력 예시**:
@@ -220,14 +220,14 @@ STEP 3: DXF → CSV 변환
 **사용법**:
 ```bash
 # 기본 사용
-python3 process_central_dxf.py central.dxf
+python3 src/process_central_dxf.py data/dxf/central.dxf
 
 # 레이어 매핑 사용
-python3 process_central_dxf.py central.dxf \
-  --layer-mapping mapping.json \
+python3 src/process_central_dxf.py data/dxf/central.dxf \
+  --layer-mapping data/json/mapping.json \
   --tolerance 7.0 \
-  --output-dxf output.dxf \
-  --output-csv output.csv
+  --output-dxf data/dxf/output.dxf \
+  --output-csv data/csv/output.csv
 ```
 
 **레이어 매핑 JSON 예시**:
@@ -294,19 +294,34 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install ezdxf
 ```
 
+### 프로젝트 구조
+
+```
+dxf-parser/
+├── src/                      # Python 스크립트
+│   ├── analyze_layers.py     # 레이어 분석
+│   └── process_central_dxf.py # CSV 변환
+├── data/                     # 데이터 파일
+│   ├── dxf/                  # DXF 원본 파일
+│   ├── csv/                  # 생성된 CSV
+│   └── json/                 # 레이어 매핑 JSON
+├── venv/                     # Python 가상환경
+└── README.md
+```
+
 ### Python 스크립트 단독 사용
 
 ```bash
 # 1. 레이어 분석
-python3 analyze_layers.py your_file.dxf --output layers.json
+python3 src/analyze_layers.py data/dxf/your_file.dxf --output data/json/layers.json
 
 # 2. 분석 결과 확인 및 매핑 JSON 생성
 # (layers.json 참고하여 mapping.json 작성)
 
 # 3. DXF 처리 및 CSV 생성
-python3 process_central_dxf.py your_file.dxf \
-  --layer-mapping mapping.json \
-  --output-csv result.csv
+python3 src/process_central_dxf.py data/dxf/your_file.dxf \
+  --layer-mapping data/json/mapping.json \
+  --output-csv data/csv/result.csv
 ```
 
 ## 🔄 전체 워크플로우 (백엔드 연동 시)
@@ -431,7 +446,7 @@ BLOCK_TO_LAYER = {
 
 ```bash
 # tolerance 조정 가능
-python3 process_central_dxf.py central.dxf --tolerance 5.0
+python3 src/process_central_dxf.py data/dxf/central.dxf --tolerance 5.0
 ```
 
 ### 좌표 정규화

@@ -16,6 +16,11 @@ venv/
 # OS
 .DS_Store
 
+# Data files (DXF, CSV, JSON outputs)
+data/dxf/*.dxf
+data/csv/*.csv
+data/json/*_parking.json
+
 # Output files (generated)
 *_converted.dxf
 *_parking.csv
