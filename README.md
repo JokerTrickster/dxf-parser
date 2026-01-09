@@ -298,18 +298,42 @@ pip install ezdxf
 
 ```
 dxf-parser/
-├── src/                      # Python 스크립트
-│   ├── analyze_layers.py     # 레이어 분석
-│   └── process_central_dxf.py # CSV 변환
-├── data/                     # 데이터 파일
-│   ├── dxf/                  # DXF 원본 파일
-│   ├── csv/                  # 생성된 CSV
-│   └── json/                 # 레이어 매핑 JSON
-├── venv/                     # Python 가상환경
+├── src/                         # Python 스크립트
+│   ├── convert_dxf.py          # 🎯 통합 변환 스크립트 (추천)
+│   ├── analyze_layers.py       # 레이어 분석
+│   └── process_central_dxf.py  # CSV 변환
+├── data/                        # 데이터 파일
+│   ├── dxf/                     # DXF 원본 파일
+│   ├── csv/                     # 생성된 CSV
+│   └── json/                    # 레이어 매핑 JSON
+├── venv/                        # Python 가상환경
 └── README.md
 ```
 
-### Python 스크립트 단독 사용
+### ⚡ 빠른 사용법 (추천)
+
+**DXF 파일 하나만 입력하면 자동으로 CSV 생성:**
+
+```bash
+# 기본 사용 (가장 간단!)
+python3 src/convert_dxf.py data/dxf/your_file.dxf
+
+# 출력 파일명 지정
+python3 src/convert_dxf.py data/dxf/your_file.dxf --output custom.csv
+
+# 장애인 주차 재분류 거리 조정
+python3 src/convert_dxf.py data/dxf/your_file.dxf --tolerance 5.0
+```
+
+**자동 처리 워크플로우:**
+1. ✅ DXF 레이어 자동 분석
+2. ✅ 주차면 블록만 자동 필터링
+3. ✅ 레이어 매핑 자동 생성
+4. ✅ CSV 자동 변환 및 저장
+
+### 🔧 수동 사용법 (고급)
+
+단계별로 직접 제어하고 싶을 때:
 
 ```bash
 # 1. 레이어 분석
