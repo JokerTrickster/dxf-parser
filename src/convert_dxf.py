@@ -11,7 +11,7 @@ DXF to CSV 자동 변환 스크립트
     1. DXF 레이어 분석 (analyze_layers.py)
     2. 주차면 블록만 자동 필터링
     3. 레이어 매핑 JSON 자동 생성
-    4. CSV 변환 (process_central_dxf.py)
+    4. CSV 변환 (process_dxf.py)
 """
 
 import sys
@@ -93,8 +93,8 @@ def create_layer_mapping(analysis):
 def run_conversion(dxf_path, mapping_path, output_csv, tolerance, normalize):
     """DXF to CSV 변환 실행"""
     print_step(3, "DXF → CSV 변환")
-    
-    process_script = SCRIPT_DIR / "process_central_dxf.py"
+
+    process_script = SCRIPT_DIR / "process_dxf.py"
     
     cmd = [
         sys.executable,

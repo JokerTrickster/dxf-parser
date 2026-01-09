@@ -43,7 +43,7 @@
 ┌─────────────┐
 │   Python    │  Scripts (CLI)
 │  (처리 엔진) │  - analyze_layers.py
-└─────────────┘  - process_central_dxf.py
+└─────────────┘  - process_dxf.py
 ```
 
 **Python은 별도 서버 구동 없이** Go 백엔드가 필요할 때마다 subprocess로 실행합니다.
@@ -132,7 +132,7 @@ python3 src/analyze_layers.py data/dxf/input.dxf --parking-only --output data/js
 }
 ```
 
-### 2. process_central_dxf.py
+### 2. process_dxf.py
 
 레이어 매핑 기반으로 DXF를 처리하고 CSV로 변환합니다.
 
@@ -220,10 +220,10 @@ STEP 3: DXF → CSV 변환
 **사용법**:
 ```bash
 # 기본 사용
-python3 src/process_central_dxf.py data/dxf/central.dxf
+python3 src/process_dxf.py data/dxf/central.dxf
 
 # 레이어 매핑 사용
-python3 src/process_central_dxf.py data/dxf/central.dxf \
+python3 src/process_dxf.py data/dxf/central.dxf \
   --layer-mapping data/json/mapping.json \
   --tolerance 7.0 \
   --output-dxf data/dxf/output.dxf \
@@ -301,7 +301,7 @@ dxf-parser/
 ├── src/                         # Python 스크립트
 │   ├── convert_dxf.py          # 🎯 통합 변환 스크립트 (추천)
 │   ├── analyze_layers.py       # 레이어 분석
-│   └── process_central_dxf.py  # CSV 변환
+│   └── process_dxf.py  # CSV 변환
 ├── data/                        # 데이터 파일
 │   ├── dxf/                     # DXF 원본 파일
 │   ├── csv/                     # 생성된 CSV
@@ -343,7 +343,7 @@ python3 src/analyze_layers.py data/dxf/your_file.dxf --output data/json/layers.j
 # (layers.json 참고하여 mapping.json 작성)
 
 # 3. DXF 처리 및 CSV 생성
-python3 src/process_central_dxf.py data/dxf/your_file.dxf \
+python3 src/process_dxf.py data/dxf/your_file.dxf \
   --layer-mapping data/json/mapping.json \
   --output-csv data/csv/result.csv
 ```
@@ -367,7 +367,7 @@ python3 src/process_central_dxf.py data/dxf/your_file.dxf \
    POST /api/v1/jobs/{id}/process
    { layer_mapping: {...}, options: {...} }
    → Go: Queue에 Job 추가
-   → Worker: Python process_central_dxf.py 실행
+   → Worker: Python process_dxf.py 실행
    ← 처리 시작 응답
 
 4. 상태 조회 (Polling)
@@ -453,7 +453,7 @@ if distance <= tolerance:
 각 건설 도면은 고유한 블록 명명 규칙을 가지므로, 프로젝트별로 블록 매핑을 정의할 수 있습니다:
 
 ```python
-# process_central_dxf.py - Central 프로젝트용
+# process_dxf.py - Central 프로젝트용
 BLOCK_TO_LAYER = {
     'p-일반': 'p-parking-basic',
     '확장형주차': 'p-parking-large',
@@ -470,7 +470,7 @@ BLOCK_TO_LAYER = {
 
 ```bash
 # tolerance 조정 가능
-python3 src/process_central_dxf.py data/dxf/central.dxf --tolerance 5.0
+python3 src/process_dxf.py data/dxf/central.dxf --tolerance 5.0
 ```
 
 ### 좌표 정규화
